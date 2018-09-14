@@ -11,6 +11,11 @@ import java.io.FileNotFoundException;
 
 public class Constants {
 
+    public static final String EMULATOR_ROOT_URL = "http://10.0.2.2:3000";
+    public static final String USB_ROOT_URL = "http://localhost:3000";
+
+    public static String POST_IMAGES_URL = EMULATOR_ROOT_URL + "/api/images.json";
+
     public static String encodeImage(Bitmap bm)
     {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();

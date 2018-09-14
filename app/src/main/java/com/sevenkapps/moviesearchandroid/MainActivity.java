@@ -45,7 +45,6 @@ public class MainActivity extends Activity {
     Bitmap photo;
     String ba1;
     ImageView imageView;
-    public static String URL = "http://10.0.2.2:3000/api/images.json";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -199,7 +198,7 @@ public class MainActivity extends Activity {
             nameValuePairs.add(new BasicNameValuePair("ImageName", System.currentTimeMillis() + ".jpg"));
             try {
                 HttpClient httpclient = new DefaultHttpClient();
-                HttpPost httppost = new HttpPost(URL);
+                HttpPost httppost = new HttpPost(Constants.POST_IMAGES_URL);
                 httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
                 HttpResponse response = httpclient.execute(httppost);
                 String st = EntityUtils.toString(response.getEntity());
