@@ -38,7 +38,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends Activity {
 
-    Button btpic, btnup, btnsel;
+    Button btpic, btnup, btnsel, bLogin;
     private Uri fileUri;
     String picturePath;
     Uri selectedImage;
@@ -73,6 +73,14 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
                 upload();
+            }
+        });
+
+        bLogin = findViewById(R.id.bLogin);
+        bLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
             }
         });
     }
