@@ -1,4 +1,4 @@
-package com.sevenkapps.moviesearchandroid;
+package com.sevenkapps.moviesearchandroid.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +17,7 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.sevenkapps.moviesearchandroid.R;
 
 /**
  * Activity to demonstrate basic retrieval of the Google user's ID, email address, and basic
