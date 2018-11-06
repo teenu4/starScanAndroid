@@ -26,6 +26,7 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.sevenkapps.moviesearchandroid.R;
+import com.sevenkapps.moviesearchandroid.db.AccessToken;
 import com.sevenkapps.moviesearchandroid.util.Constants;
 import com.sevenkapps.moviesearchandroid.volley.AppController;
 
@@ -149,6 +150,7 @@ public class LoginActivity extends BaseActivity implements
                             try {
                                 String accessToken = response.getString("access_token");
                                 System.out.println(accessToken);
+                                AccessToken.createToken(getApplicationContext(), accessToken, "google");
 
                             } catch (JSONException e) {
                                 e.printStackTrace();
