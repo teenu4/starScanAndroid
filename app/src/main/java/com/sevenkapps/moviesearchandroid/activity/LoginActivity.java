@@ -148,9 +148,11 @@ public class LoginActivity extends BaseActivity implements
                         public void onResponse(JSONObject response) {
                              System.out.println("Response: " + response.toString());
                             try {
+                                JSONObject userInfo = response.getJSONObject("user");
+                                String name = userInfo.getString("name");
+                                String image = userInfo.getString("image_url");
                                 String accessToken = response.getString("access_token");
-                                System.out.println(accessToken);
-                                AccessToken.createToken(getApplicationContext(), accessToken, "google");
+                                AccessToken.createToken(getApplicationContext(), accessToken, "google", name, image);
 
                             } catch (JSONException e) {
                                 e.printStackTrace();

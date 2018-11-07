@@ -57,4 +57,6 @@
     <string name="desc_rest_activity">Demonstrate using Google Sign In with a Google REST API</string>
     <string name="name_rest_activity">RestApiActivity</string>
     <string name="server_client_id">477146576794-8fqv3bohohg7lj5139bm67jb93qerpkk.apps.googleusercontent.com</string>
+    <string name="facebook_app_id">1946962652276703</string>
+    <string name="fb_login_protocol_scheme">fb1946962652276703</string>
 </resources>
