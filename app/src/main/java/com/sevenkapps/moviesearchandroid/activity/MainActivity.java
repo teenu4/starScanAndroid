@@ -36,7 +36,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends Activity {
 
-    Button btpic, btnup, btnsel, bLogin;
+    Button btpic, btnup, btnsel, bGoogleLogin, bFacebookLogin;
     private Uri fileUri;
     String picturePath;
     Uri selectedImage;
@@ -74,13 +74,37 @@ public class MainActivity extends Activity {
             }
         });
 
-        bLogin = findViewById(R.id.bLogin);
-        bLogin.setOnClickListener(new View.OnClickListener() {
+        bGoogleLogin = findViewById(R.id.bGoogleLogin);
+        bGoogleLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), LoginActivity.class));
             }
         });
+
+        bFacebookLogin = findViewById(R.id.bFacebookLogin);
+        bFacebookLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), FacebookLoginActivity.class));
+            }
+        });
+//TEMP: code to get key hash for facebook auth
+//        try {
+//            PackageInfo info = getPackageManager().getPackageInfo(
+//                    "com.sevenkapps.moviesearchandroid",
+//                    PackageManager.GET_SIGNATURES);
+//            for (Signature signature : info.signatures) {
+//                MessageDigest md = MessageDigest.getInstance("SHA");
+//                md.update(signature.toByteArray());
+//                Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
+//            }
+//        } catch (PackageManager.NameNotFoundException e) {
+//            System.out.println("NameNotFoundException");
+//
+//        } catch (NoSuchAlgorithmException e) {
+//            System.out.println("NoSuchAlgorithmException");
+//        }
     }
 
     private void upload() {

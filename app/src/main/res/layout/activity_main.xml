@@ -15,10 +15,16 @@
         android:textColor="@color/colorPrimaryDark"/>
 
     <Button
-        android:id="@+id/bLogin"
+        android:id="@+id/bGoogleLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login" />
+        android:text="Google Login" />
+
+    <Button
+        android:id="@+id/bFacebookLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Facebook Login" />
 
     <Button
         android:id="@+id/bSelect"
