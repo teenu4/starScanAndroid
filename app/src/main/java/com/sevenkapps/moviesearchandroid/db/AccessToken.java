@@ -53,4 +53,8 @@ public class AccessToken {
             return null;
         }
     }
+
+    public static boolean authenticated(Context context) {
+        return getToken(context) != null;
+    }
 }

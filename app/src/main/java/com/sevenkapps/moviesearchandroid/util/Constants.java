@@ -17,6 +17,7 @@ public class Constants {
 
     public static String POST_IMAGES_URL = ROOT_URL + "/api/images.json";
     public static String GOOGLE_LOGIN_URL = ROOT_URL + "/api/google_token.json";
+    public static String FACEBOOK_LOGIN_URL = ROOT_URL + "/api/facebook_token.json";
 
     public static String encodeImage(Bitmap bm) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
