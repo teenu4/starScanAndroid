@@ -19,6 +19,9 @@ public class Constants {
     public static String GOOGLE_LOGIN_URL = ROOT_URL + "/api/google_token.json";
     public static String FACEBOOK_LOGIN_URL = ROOT_URL + "/api/facebook_token.json";
 
+    public static final String AUTH_TYPE_GOOGLE = "google";
+    public static final String AUTH_TYPE_FACEBOOK = "facebook";
+
     public static String encodeImage(Bitmap bm) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bm.compress(Bitmap.CompressFormat.JPEG, 100, baos);

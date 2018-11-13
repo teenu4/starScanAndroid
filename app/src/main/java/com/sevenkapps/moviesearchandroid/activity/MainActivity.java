@@ -18,6 +18,8 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.sevenkapps.moviesearchandroid.R;
+import com.sevenkapps.moviesearchandroid.db.AccessToken;
+import com.sevenkapps.moviesearchandroid.requests.ImageRequests;
 import com.sevenkapps.moviesearchandroid.util.Constants;
 
 import org.apache.http.HttpResponse;
@@ -34,7 +36,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends BaseActivity {
 
     Button btpic, btnup, btnsel, bGoogleLogin, bFacebookLogin;
     private Uri fileUri;
@@ -48,6 +50,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        System.out.println(AccessToken.authenticated(getApplicationContext()));
         imageView = findViewById(R.id.imageView);
         btpic = (Button) findViewById(R.id.bShoot);
         btpic.setOnClickListener(new View.OnClickListener() {
@@ -223,20 +226,7 @@ public class MainActivity extends Activity {
         @Override
         protected String doInBackground(Void... params) {
 
-            ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-            nameValuePairs.add(new BasicNameValuePair("base64", ba1));
-            nameValuePairs.add(new BasicNameValuePair("ImageName", System.currentTimeMillis() + ".jpg"));
-            try {
-                HttpClient httpclient = new DefaultHttpClient();
-                HttpPost httppost = new HttpPost(Constants.POST_IMAGES_URL);
-                httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-                HttpResponse response = httpclient.execute(httppost);
-                String st = EntityUtils.toString(response.getEntity());
-                Log.v("log_tag", "In the try Loop" + st);
-
-            } catch (Exception e) {
-                Log.v("log_tag", "Error in http connection " + e.toString());
-            }
+            ImageRequests.uploadImageToServer(getApplicationContext(), ba1);
             return "Success";
 
         }
