@@ -50,7 +50,8 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        System.out.println(AccessToken.authenticated(getApplicationContext()));
+//        System.out.println(AccessToken.authenticated(getApplicationContext()));
+//        ImageRequests.getImagesFromServer(getApplicationContext());
         imageView = findViewById(R.id.imageView);
         btpic = (Button) findViewById(R.id.bShoot);
         btpic.setOnClickListener(new View.OnClickListener() {

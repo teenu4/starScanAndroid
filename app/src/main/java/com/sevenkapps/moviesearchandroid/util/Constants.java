@@ -11,13 +11,16 @@ import java.io.FileNotFoundException;
 
 public class Constants {
 
+    public static final String API_VERSION = "1";
     public static final String DEV_EMULATOR_ROOT_URL = "https://10.0.2.2:3000";
     public static final String DEV_USB_ROOT_URL = "https://localhost:3000";
-    public static final String ROOT_URL = DEV_EMULATOR_ROOT_URL;
+    public static final String ROOT_URL = DEV_EMULATOR_ROOT_URL  + "/api/v" + API_VERSION + "/";
 
-    public static String POST_IMAGES_URL = ROOT_URL + "/api/images.json";
-    public static String GOOGLE_LOGIN_URL = ROOT_URL + "/api/google_token.json";
-    public static String FACEBOOK_LOGIN_URL = ROOT_URL + "/api/facebook_token.json";
+    public static String POST_IMAGES_URL = ROOT_URL + "images.json";
+    public static String GOOGLE_LOGIN_URL = ROOT_URL + "google_token.json";
+    public static String FACEBOOK_LOGIN_URL = ROOT_URL + "facebook_token.json";
+
+    public static String GET_IMAGES_URL = ROOT_URL + "images.json";
 
     public static final String AUTH_TYPE_GOOGLE = "google";
     public static final String AUTH_TYPE_FACEBOOK = "facebook";
